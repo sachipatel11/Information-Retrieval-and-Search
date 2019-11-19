@@ -1,7 +1,7 @@
 package index;
 
-/** Stores a triple of a document score, a doc ID, and the String content.
- *  A class instance represents one search result.
+/** Stores a triple of a document score, a doc ID, and the content of the document as a String.
+ *  A search result is represented as an instance of this class.
  * 
  * @author ssanner@mie.utoronto.ca
  *
