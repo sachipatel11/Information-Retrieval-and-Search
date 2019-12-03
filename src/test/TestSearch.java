@@ -29,15 +29,15 @@ public class TestSearch {
 		System.out.println("\nTokenize results: " + tok.tokenize("SoftBank is buying a chunk of Uber and it's state-of-the-art Taxi-hailing system for $10 billion"));
 		
 		// Build a simple search index with the basic classes given
-		TestIndex(new soln.index.InvertedIndex(new io.StaticDocSource(), 
+		TestIndex(new index.InvertedIndex(new io.StaticDocSource(), 
 				  							   new tokenizer.SimpleTokenizer(), 
 				  							   new score.TFScoringFun()));
 		
 		// TODO: Here is the solution implementation of all classes -- you will need to unzip the files
 		//       provided on Blackboard and provide the correct path as the argument to FileDocSource.
-		TestIndex(new soln.index.InvertedIndex(new soln.io.FileDocSource("files/Part1/awards_1994"), 
-											   new soln.tokenizer.IndexingTokenizer(), 
-											   new soln.score.TFIDFScoringFun()));
+		TestIndex(new index.InvertedIndex(new io.FileDocSource("files/test"), 
+											   new tokenizer.IndexingTokenizer(), 
+											   new score.TFIDFScoringFun()));
 
 		// TODO: Here is the same test with the implementation you are providing that should match the above soln.
 		//       (Do not rename classes... modulo the issue that you might store your files in a different
@@ -60,9 +60,9 @@ public class TestSearch {
 		
 		// Do a few queries
 		ms_start = System.currentTimeMillis();
-		DoSearch(s, "Bitcoin");
-		DoSearch(s, "billion");
-		DoSearch(s, "computer equipment");
+		DoSearch(s, "what is the best commercial mainframe");
+		//DoSearch(s, "billion");
+		//DoSearch(s, "computer equipment");
 		//DoSearch(s, "at to of by");
 		ms_end = System.currentTimeMillis();
 		System.out.println("\n>> Completed searches in " + (ms_end - ms_start) + " ms.");

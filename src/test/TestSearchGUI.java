@@ -14,10 +14,10 @@ import javax.swing.text.*;
 import index.DocScore;
 import index.Index;
 import io.StaticDocSource;
-import soln.index.InvertedIndex;
-import soln.io.FileDocSource;
-import soln.score.TFIDFScoringFun;
-import soln.tokenizer.IndexingTokenizer;
+import index.InvertedIndex;
+import io.FileDocSource;
+import score.TFIDFScoringFun;
+import tokenizer.IndexingTokenizer;
 
 /** You are *not* required to understand this code other than how to modify the main() method
  *  with different configurations of the search engine.  This class can help you debug since
